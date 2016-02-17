@@ -8,28 +8,33 @@
 
 import Foundation
 
-private var _Name: String!
-private var _PokeId: String!
-
-var Name: String
+class Pokemon
 {
-    get
-    {
-        return _Name
+    private var _Name: String!
+    private var _PokeId: String!
+    
+    var Name: String
+        {
+        get
+        {
+            return _Name
+        }
     }
-}
-
-var PokeId: String
-{
-    get
-    {
-        return _PokeId
+    
+    var PokeId: String
+        {
+        get
+        {
+            return _PokeId
+        }
     }
-}
-
-/*init(name: String , pokid: String)
-{
+    
+    init(name: String , pokid: String)
+    {
     _Name = name
     _PokeId = pokid
-}*/
+    }
+
+    
+}
  
