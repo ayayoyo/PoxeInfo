@@ -8,9 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDataSource , UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class ViewController: UIViewController, UICollectionViewDataSource , UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UISearchBarDelegate
+{
 
     @IBOutlet weak var CVPokemon: UICollectionView!
+    @IBOutlet weak var SrchBarSearchPoke:UISearchBar!
+    
+    
+    
     var PokeList = [Pokemon]()
     var FiltertedPokeList = [Pokemon] ()
     var isFilterted = false
@@ -19,6 +24,7 @@ class ViewController: UIViewController, UICollectionViewDataSource , UICollectio
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        SrchBarSearchPoke.returnKeyType = UIReturnKeyType.Done
         ParsePokemonCSV()
     }
 
@@ -91,16 +97,73 @@ class ViewController: UIViewController, UICollectionViewDataSource , UICollectio
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
     {
+        let poke: Pokemon!
+        if isFilterted
+        {
+            poke = FiltertedPokeList[indexPath.row]
+        }
+        else
+        {
+            poke = PokeList[indexPath.row]
+        }
         
+        performSegueWithIdentifier("PokeDetailSegue", sender: poke)
     }
     
     
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String)
+    {
+        if  searchText == ""
+        {
+            isFilterted = false
+            view.endEditing(true)
+            CVPokemon.reloadData()
+        }
+        else
+        {
+            isFilterted = true
+            let lower = searchText.lowercaseString
+            FiltertedPokeList = PokeList.filter({$0.Name.rangeOfString(lower) != nil})
+            CVPokemon.reloadData()
+        }
+    }
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        view.endEditing(true)
+    }
     
     
-    
-    
-    
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        if segue.identifier == "PokeDetailSegue"
+        {
+            if let detailvc = segue.destinationViewController as? PokeDetailsVC
+            {
+                if let poke = sender as?Pokemon
+                {
+                    detailvc.pokemon = poke
+                }
+                
+            }
+        }
+    }
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

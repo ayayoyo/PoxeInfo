@@ -15,7 +15,8 @@ class PokemonCell: UICollectionViewCell
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        layer.cornerRadius = 0.5
+        layer.cornerRadius = 5.0
+        layer.masksToBounds = true
         
     }
     

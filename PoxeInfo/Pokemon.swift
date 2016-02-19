@@ -31,8 +31,8 @@ class Pokemon
     
     init(name: String , pokid: Int)
     {
-    _Name = name
-    _PokeId = pokid
+        _Name = name
+        _PokeId = pokid
     }
 
     
