@@ -159,6 +159,13 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zNw-wZ-HhL">
+                                        <rect key="frame" x="20" y="13" width="30" height="30"/>
+                                        <state key="normal" image="back"/>
+                                        <connections>
+                                            <action selector="BtnBack_Pressed:" destination="zLe-ej-8UD" eventType="touchUpInside" id="aH1-vF-s8F"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -349,7 +356,18 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imgEvl" destination="iqZ-vc-aUK" id="b2L-sL-FRU"/>
+                        <outlet property="imgMain" destination="i0c-lj-rXZ" id="5Da-0L-ABv"/>
+                        <outlet property="imgNextEvl" destination="8sN-Cx-uGx" id="2GL-jx-hX1"/>
+                        <outlet property="lblBaseAttack" destination="Nia-5p-dAx" id="RoU-J8-j80"/>
+                        <outlet property="lblDefense" destination="caR-9b-swA" id="hO8-F5-fU3"/>
+                        <outlet property="lblDescriptiom" destination="3kc-B8-ALm" id="lqH-Vp-P0U"/>
+                        <outlet property="lblEvl" destination="Ofy-AI-SxU" id="pP3-4D-e9K"/>
                         <outlet property="lblHeader" destination="F8x-j5-bAM" id="NQq-1n-nfp"/>
+                        <outlet property="lblHeight" destination="EuA-4j-hH1" id="lex-Cg-YLI"/>
+                        <outlet property="lblPoxeId" destination="tJt-QD-syC" id="8CR-bV-AfH"/>
+                        <outlet property="lblType" destination="C8Z-TN-yh4" id="lbS-ZY-qFM"/>
+                        <outlet property="lblWeight" destination="hFo-5R-Dip" id="aZZ-ys-SNi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jnn-P0-Xff" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -361,5 +379,6 @@
         <image name="1" width="120" height="120"/>
         <image name="101" width="120" height="120"/>
         <image name="104" width="120" height="120"/>
+        <image name="back" width="512" height="512"/>
     </resources>
 </document>

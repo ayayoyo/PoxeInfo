@@ -23,6 +23,7 @@
 		03FACA5B1C74DB5000F15614 /* pokemon.csv in Resources */ = {isa = PBXBuildFile; fileRef = 03FACA5A1C74DB5000F15614 /* pokemon.csv */; };
 		03FACA601C74DEA100F15614 /* BackgroundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FACA5F1C74DEA100F15614 /* BackgroundImage.swift */; };
 		03FACA621C74E51400F15614 /* TopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FACA611C74E51400F15614 /* TopBarView.swift */; };
+		DBA8FB542E5C51DFF4A1CF01 /* Pods_PoxeInfo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1DE5FCB7EE14B076A2CC726 /* Pods_PoxeInfo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,9 @@
 		03FACA5A1C74DB5000F15614 /* pokemon.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pokemon.csv; sourceTree = "<group>"; };
 		03FACA5F1C74DEA100F15614 /* BackgroundImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundImage.swift; sourceTree = "<group>"; };
 		03FACA611C74E51400F15614 /* TopBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopBarView.swift; sourceTree = "<group>"; };
+		0BEB094DC9F892A2E3831ED1 /* Pods-PoxeInfo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoxeInfo.release.xcconfig"; path = "Pods/Target Support Files/Pods-PoxeInfo/Pods-PoxeInfo.release.xcconfig"; sourceTree = "<group>"; };
+		3547B6D2CF012B55030208AC /* Pods-PoxeInfo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoxeInfo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PoxeInfo/Pods-PoxeInfo.debug.xcconfig"; sourceTree = "<group>"; };
+		C1DE5FCB7EE14B076A2CC726 /* Pods_PoxeInfo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PoxeInfo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBA8FB542E5C51DFF4A1CF01 /* Pods_PoxeInfo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +104,8 @@
 				03FACA381C74CDB600F15614 /* PoxeInfoTests */,
 				03FACA431C74CDB600F15614 /* PoxeInfoUITests */,
 				03FACA221C74CDB600F15614 /* Products */,
+				7654D05A68E16ADE32B4DF6C /* Pods */,
+				C3F786C8AA5DFCEEECBA0D1E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -184,6 +191,23 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		7654D05A68E16ADE32B4DF6C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3547B6D2CF012B55030208AC /* Pods-PoxeInfo.debug.xcconfig */,
+				0BEB094DC9F892A2E3831ED1 /* Pods-PoxeInfo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C3F786C8AA5DFCEEECBA0D1E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C1DE5FCB7EE14B076A2CC726 /* Pods_PoxeInfo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -191,9 +215,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03FACA491C74CDB600F15614 /* Build configuration list for PBXNativeTarget "PoxeInfo" */;
 			buildPhases = (
+				8A1855C3FE6FE84E4719C89C /* Check Pods Manifest.lock */,
 				03FACA1D1C74CDB600F15614 /* Sources */,
 				03FACA1E1C74CDB600F15614 /* Frameworks */,
 				03FACA1F1C74CDB600F15614 /* Resources */,
+				521B3F170B89ADF49BBEFB66 /* Embed Pods Frameworks */,
+				33D26D43D84963479C9E8890 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -313,6 +340,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		33D26D43D84963479C9E8890 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PoxeInfo/Pods-PoxeInfo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		521B3F170B89ADF49BBEFB66 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PoxeInfo/Pods-PoxeInfo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A1855C3FE6FE84E4719C89C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		03FACA1D1C74CDB600F15614 /* Sources */ = {
@@ -466,6 +541,7 @@
 		};
 		03FACA4A1C74CDB600F15614 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3547B6D2CF012B55030208AC /* Pods-PoxeInfo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -481,6 +557,7 @@
 		};
 		03FACA4B1C74CDB600F15614 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BEB094DC9F892A2E3831ED1 /* Pods-PoxeInfo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
