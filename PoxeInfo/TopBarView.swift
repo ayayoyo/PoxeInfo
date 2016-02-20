@@ -12,7 +12,6 @@ class TopBarView: UIView {
 
     override func awakeFromNib()
     {
-        self.backgroundColor = UIColor.redColor()
-        
+        self.backgroundColor = UIColor.orangeColor()
     }
 }

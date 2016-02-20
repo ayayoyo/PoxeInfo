@@ -45,10 +45,52 @@ class PokeDetailsVC: UIViewController {
     {
         super.viewDidLoad()
 
-        lblHeader.text = pokemon.Name
+        lblHeader.text = pokemon.Name.capitalizedString
+        let img = UIImage (named: "\(pokemon.PokeId)")
+        imgMain.image = img
+        imgEvl.image = img
+        lblPoxeId.text = "\(pokemon.PokeId)"
+        
+        pokemon.DownloadPokemon { () -> () in
+            
+           self.UpdateUI()
+            
+        }
         
     }
 
+    func UpdateUI()
+    {
+       
+        self.lblDescriptiom.text = pokemon.PokeDescription
+       
+        self.lblDefense.text = self.pokemon.Defense
+        self.lblHeight.text = self.pokemon.Height
+        self.lblWeight.text = self.pokemon.Weight
+        self.lblType.text = self.pokemon.Type
+        lblBaseAttack.text = pokemon.Attack
+        
+        
+        if  pokemon.NextEvlId == ""
+        {
+            lblEvl.text = "No Evolution"
+            imgNextEvl.hidden = true
+        }
+        else
+        {
+            imgNextEvl.hidden = false
+            var str = "Next Evolution: \(self.pokemon.NextEvlTxt)"
+            self.imgNextEvl.image = UIImage (named: self.pokemon.NextEvlId)
+            
+            if pokemon.NextEvlLvl != ""
+            {
+                str += " - LVL \(pokemon.NextEvlLvl)"
+            }
+            
+            lblEvl.text = str
+        }
+       
+    }
     
     @IBAction func BtnBack_Pressed(sender: AnyObject)
     {
